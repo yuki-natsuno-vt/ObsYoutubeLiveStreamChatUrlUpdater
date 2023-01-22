@@ -1,9 +1,11 @@
 
 # OBS Youtube Live Stream Chat URL Updater
 
-OBSでYoutube Live配信のチャットコメントを表示するブラウザソースのURLを自動更新するスクリプトです。
+OBSでYoutube Live配信のチャットコメントを表示するブラウザソースのURLを自動更新するスクリプトです。<br>
+※限定配信など公開範囲に制限があるコンテンツは情報を取得できません。
 
-A script that automatically updates the URL of the browser source that displays Youtube Live stream chat comments in OBS.
+A script that automatically updates the URL of the browser source that displays Youtube Live stream chat comments in OBS.<br>
+*Information cannot be obtained for content that has a limited range of disclosure, such as limited distribution.
 
 ---
 
@@ -20,11 +22,13 @@ A script that automatically updates the URL of the browser source that displays 
 
 [GitHubの公開ページ](https://github.com/yuki-natsuno-vt/ObsYoutubeLiveStreamChatUrlUpdater)の [ Code ] ボタンを押します。<br>
 表示されるメニューから [ Download ZIP ]を選んで ObsYoutubeLiveStreamChatUrlUpdater-main.zip を入手してください。<br>
-ダウンロードしたzipファイルを任意の場所に展開して下さい。
+ダウンロードしたzipファイルを任意の場所に展開して下さい。<br>
+*※パスに半角英数以外の文字が含まれるとOBSでスクリプトをロードする際にエラーになります*
 
 Press the [Code] button on the [GitHub public page](https://github.com/yuki-natsuno-vt/ObsYoutubeLiveStreamChatUrlUpdater). <br>
 Select [Download ZIP] from the displayed menu to obtain ObsYoutubeLiveStreamChatUrlUpdater-main.zip. <br>
-Extract the downloaded zip file to any location.
+Extract the downloaded zip file to any location.<br>
+**Any non-alphanumeric characters in the path will result in an error while loading the script in OBS.*
 
 ![menu,tool,script](docs/img/000.png)
 
@@ -104,17 +108,26 @@ Update the chat URL set in the browser source.
 # トラブルシューティング / Troubleshooting
 
 スクリプトウインドウの[スクリプトログ]ボタンを押すと、スクリプトログウインドウが表示されます。<br>
-[youtube-live-stream-chat-url-updater.lua] Error: ~~~ が表示されている場合は次の内容を確認してください。
+[youtube-live-stream-chat-url-updater.lua] Error ~~~ が表示されている場合は次の内容を確認してください。
 
 When you press the [Script Log] button in the script window, the script log window is displayed.<br>
-If "[youtube-live-stream-chat-url-updater.lua] Error: ~~~" is displayed, check the following.
+If "[youtube-live-stream-chat-url-updater.lua] Error ~~~" is displayed, check the following.
+
 ![troubleshooting](docs/img/070.png)
+
+## [youtube-live-stream-chat-url-updater.lua] Error loading file: cannot open
+
+パスに半角英数以外の文字が使われている可能性があります。スクリプトを配置する場所を変更してください。
+
+Non-alphanumeric characters are used in the path. Please change the location of the script.
 
 ## [youtube-live-stream-chat-url-updater.lua] Error: videoId was not found.
 
-Channel URLに誤りがあるか、指定のURLからコンテンツの情報を取得できない状態になっています。
+Channel URLに誤りがあるか、指定のURLからコンテンツの情報を取得できない状態になっています。<br>
+限定配信など公開範囲に制限があるコンテンツは情報を取得できません。
 
-There is an error in the Channel URL, or content information cannot be obtained from the specified URL.
+There is an error in the Channel URL, or content information cannot be obtained from the specified URL.<br>
+Information cannot be obtained for content that has a limited range of disclosure, such as limited distribution.
 
 ## [youtube-live-stream-chat-url-updater.lua] Error: curl command is not found.
 

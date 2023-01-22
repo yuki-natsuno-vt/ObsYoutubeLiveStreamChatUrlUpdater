@@ -366,8 +366,10 @@ code {
     });
   </script>
 <h1 id="obs-youtube-live-stream-chat-url-updater">OBS Youtube Live Stream Chat URL Updater</h1>
-<p>OBSでYoutube Live配信のチャットコメントを表示するブラウザソースのURLを自動更新するスクリプトです。</p>
-<p>A script that automatically updates the URL of the browser source that displays Youtube Live stream chat comments in OBS.</p>
+<p>OBSでYoutube Live配信のチャットコメントを表示するブラウザソースのURLを自動更新するスクリプトです。<br>
+※限定配信など公開範囲に制限があるコンテンツは情報を取得できません。</p>
+<p>A script that automatically updates the URL of the browser source that displays Youtube Live stream chat comments in OBS.<br>
+*Information cannot be obtained for content that has a limited range of disclosure, such as limited distribution.</p>
 <hr>
 <h2 id="%E7%9B%AE%E6%AC%A1--contents">目次 / Content(s)</h2>
 <ul>
@@ -381,10 +383,12 @@ code {
 <h1 id="%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89--download">ダウンロード / Download</h1>
 <p><a href="https://github.com/yuki-natsuno-vt/ObsYoutubeLiveStreamChatUrlUpdater">GitHubの公開ページ</a>の [ Code ] ボタンを押します。<br>
 表示されるメニューから [ Download ZIP ]を選んで ObsYoutubeLiveStreamChatUrlUpdater-main.zip を入手してください。<br>
-ダウンロードしたzipファイルを任意の場所に展開して下さい。</p>
+ダウンロードしたzipファイルを任意の場所に展開して下さい。<br>
+<em>※パスに半角英数以外の文字が含まれるとOBSでスクリプトをロードする際にエラーになります</em></p>
 <p>Press the [Code] button on the <a href="https://github.com/yuki-natsuno-vt/ObsYoutubeLiveStreamChatUrlUpdater">GitHub public page</a>. <br>
 Select [Download ZIP] from the displayed menu to obtain ObsYoutubeLiveStreamChatUrlUpdater-main.zip. <br>
-Extract the downloaded zip file to any location.</p>
+Extract the downloaded zip file to any location.<br>
+*<em>Any non-alphanumeric characters in the path will result in an error while loading the script in OBS.</em></p>
 <p><img src="docs/img/000.png" alt="menu,tool,script"></p>
 <hr>
 <h1 id="obs%E3%81%B8%E3%81%AE%E5%B0%8E%E5%85%A5%E6%96%B9%E6%B3%95--how-to-install-to-obs">OBSへの導入方法 / How to install to OBS</h1>
@@ -432,13 +436,18 @@ Only alphanumeric characters can be used in the name.</p>
 <hr>
 <h1 id="%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0--troubleshooting">トラブルシューティング / Troubleshooting</h1>
 <p>スクリプトウインドウの[スクリプトログ]ボタンを押すと、スクリプトログウインドウが表示されます。<br>
-[youtube-live-stream-chat-url-updater.lua] Error: ~~~ が表示されている場合は次の内容を確認してください。</p>
+[youtube-live-stream-chat-url-updater.lua] Error ~~~ が表示されている場合は次の内容を確認してください。</p>
 <p>When you press the [Script Log] button in the script window, the script log window is displayed.<br>
-If &quot;[youtube-live-stream-chat-url-updater.lua] Error: ~~~&quot; is displayed, check the following.
-<img src="docs/img/070.png" alt="troubleshooting"></p>
+If &quot;[youtube-live-stream-chat-url-updater.lua] Error ~~~&quot; is displayed, check the following.</p>
+<p><img src="docs/img/070.png" alt="troubleshooting"></p>
+<h2 id="youtube-live-stream-chat-url-updaterlua-error-loading-file-cannot-open">[youtube-live-stream-chat-url-updater.lua] Error loading file: cannot open</h2>
+<p>パスに半角英数以外の文字が使われている可能性があります。スクリプトを配置する場所を変更してください。</p>
+<p>Non-alphanumeric characters are used in the path. Please change the location of the script.</p>
 <h2 id="youtube-live-stream-chat-url-updaterlua-error-videoid-was-not-found">[youtube-live-stream-chat-url-updater.lua] Error: videoId was not found.</h2>
-<p>Channel URLに誤りがあるか、指定のURLからコンテンツの情報を取得できない状態になっています。</p>
-<p>There is an error in the Channel URL, or content information cannot be obtained from the specified URL.</p>
+<p>Channel URLに誤りがあるか、指定のURLからコンテンツの情報を取得できない状態になっています。<br>
+限定配信など公開範囲に制限があるコンテンツは情報を取得できません。</p>
+<p>There is an error in the Channel URL, or content information cannot be obtained from the specified URL.<br>
+Information cannot be obtained for content that has a limited range of disclosure, such as limited distribution.</p>
 <h2 id="youtube-live-stream-chat-url-updaterlua-error-curl-command-is-not-found">[youtube-live-stream-chat-url-updater.lua] Error: curl command is not found.</h2>
 <p>URLからページ情報を取得する curl コマンドが見つかりませんでした。<br>
 Windows10/Macには標準でインストールされているはずですが、インストールされていないようであれば新たにインストールしてください。</p>
