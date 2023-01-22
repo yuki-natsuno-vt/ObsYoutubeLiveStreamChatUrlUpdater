@@ -1,24 +1,15 @@
 obs = obslua
 
 g_channel_url = "https://www.youtube.com/@yuki_natsuno_vt"
-g_source_name = "YoutubeChat" -- Alphabet Only. ”¼Šp‰p”‚Ì‚İ‘Î‰
+g_source_name = "YoutubeChat" -- Alphabet Only. åŠè§’è‹±æ•°ã®ã¿å¯¾å¿œ
 
-function get_video_renderer_video_id()
+function get_video_id()
   local handle = io.popen("curl -s "..g_channel_url)
-  local result = handle:read("*a")
-  result = string.match(result, "\"videoRenderer\":{\"videoId\":\"[^\"]+\"")
-  if result ~= nil then
-    result = string.match(result, ":\"[^\"]+\"")
-    result = string.gsub(result, ":", "")
-    result = string.gsub(result, "\"", "")
+  local stdout = handle:read("*a")
+  result = string.match(stdout, "\"videoRenderer\":{\"videoId\":\"[^\"]+\"")
+  if result == nil then
+    result = string.match(stdout, "\"gridVideoRenderer\":{\"videoId\":\"[^\"]+\"")
   end
-  return result
-end
-
-function get_grid_video_renderer_video_id()
-  local handle = io.popen("curl -s "..g_channel_url)
-  local result = handle:read("*a")
-  result = string.match(result, "\"gridVideoRenderer\":{\"videoId\":\"[^\"]+\"")
   if result ~= nil then
     result = string.match(result, ":\"[^\"]+\"")
     result = string.gsub(result, ":", "")
@@ -38,11 +29,7 @@ function confirm_curl()
 end
 
 function update_live_url()
-  video_id = nil
-  video_id = get_video_renderer_video_id()
-  if video_id == nil then
-    video_id = get_grid_video_renderer_video_id()
-  end
+  video_id = get_video_id()
   if video_id == nil then
     if confirm_curl() then
       print("Error: videoId was not found.")
