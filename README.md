@@ -8,10 +8,25 @@ A script that automatically updates the URL of the browser source that displays 
 ---
 
 ## 目次 / Content(s)
+* ダウンロード / Download
 * OBSへの導入方法 / How to install to OBS
 * 設定 / Setting
 * トラブルシューティング / Troubleshooting
 * ライセンス / License
+
+---
+
+# ダウンロード / Download
+
+[GitHubの公開ページ](https://github.com/yuki-natsuno-vt/ObsYoutubeLiveStreamChatUrlUpdater)の [ Code ] ボタンを押します。<br>
+表示されるメニューから [ Download ZIP ]を選んで ObsYoutubeLiveStreamChatUrlUpdater-main.zip を入手してください。<br>
+ダウンロードしたzipファイルを任意の場所に展開して下さい。
+
+Press the [Code] button on the [GitHub public page](https://github.com/yuki-natsuno-vt/ObsYoutubeLiveStreamChatUrlUpdater). <br>
+Select [Download ZIP] from the displayed menu to obtain ObsYoutubeLiveStreamChatUrlUpdater-main.zip. <br>
+Extract the downloaded zip file to any location.
+
+![menu,tool,script](docs/img/000.png)
 
 ---
 
@@ -26,25 +41,25 @@ Select [Tools (T)] → [Scripts] from the OBS menu.
 
 A script window will appear. Add a script file by pressing [+] on the script tab.
 
-![script,add](docs/img/030.png)
+![add script](docs/img/030.png)
 
-youtube-live-stream-chat-updater.lua を開きます。
+ダウンロードしたzipを展開したフォルダ内にある youtube-live-stream-chat-updater.lua を開きます。
 
-Open youtube-live-stream-chat-updater.lua
+Open youtube-live-stream-chat-updater.lua in the downloaded zip folder.
 
-![script,add](docs/img/040.png)
+![open script](docs/img/040.png)
 
 導入が完了しました。
 
 Installation completed.
 
-![script,add](docs/img/050.png)
+![installation completed](docs/img/050.png)
 
 ---
 
 # 設定 / Setting
 
-![script,add](docs/img/060.png)
+![setting](docs/img/060.png)
 
 設定の各項目は、一度入力すると値が保持されます。<br>
 以降はOBSを起動すると自動でURLの更新が行われます。<br>
@@ -76,7 +91,7 @@ Source name には、チャットコメントのURLを設定する、ブラウ�
 For Source name, set the name of the browser source that sets the chat comment URL.<br>
 Only alphanumeric characters can be used in the name.
 
-![script,add](docs/img/010.png)
+![source name](docs/img/010.png)
 
 ## Update LiveChat URL Button
 
@@ -93,7 +108,7 @@ Update the chat URL set in the browser source.
 
 When you press the [Script Log] button in the script window, the script log window is displayed.<br>
 If "[youtube-live-stream-chat-url-updater.lua] Error: ~~~" is displayed, check the following.
-![script,add](docs/img/070.png)
+![troubleshooting](docs/img/070.png)
 
 ## [youtube-live-stream-chat-url-updater.lua] Error: videoId was not found.
 

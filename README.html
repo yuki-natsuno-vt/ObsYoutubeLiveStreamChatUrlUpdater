@@ -371,11 +371,21 @@ code {
 <hr>
 <h2 id="%E7%9B%AE%E6%AC%A1--contents">目次 / Content(s)</h2>
 <ul>
+<li>ダウンロード / Download</li>
 <li>OBSへの導入方法 / How to install to OBS</li>
 <li>設定 / Setting</li>
 <li>トラブルシューティング / Troubleshooting</li>
 <li>ライセンス / License</li>
 </ul>
+<hr>
+<h1 id="%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89--download">ダウンロード / Download</h1>
+<p><a href="https://github.com/yuki-natsuno-vt/ObsYoutubeLiveStreamChatUrlUpdater">GitHubの公開ページ</a>の [ Code ] ボタンを押します。<br>
+表示されるメニューから [ Download ZIP ]を選んで ObsYoutubeLiveStreamChatUrlUpdater-main.zip を入手してください。<br>
+ダウンロードしたzipファイルを任意の場所に展開して下さい。</p>
+<p>Press the [Code] button on the <a href="https://github.com/yuki-natsuno-vt/ObsYoutubeLiveStreamChatUrlUpdater">GitHub public page</a>. <br>
+Select [Download ZIP] from the displayed menu to obtain ObsYoutubeLiveStreamChatUrlUpdater-main.zip. <br>
+Extract the downloaded zip file to any location.</p>
+<p><img src="docs/img/000.png" alt="menu,tool,script"></p>
 <hr>
 <h1 id="obs%E3%81%B8%E3%81%AE%E5%B0%8E%E5%85%A5%E6%96%B9%E6%B3%95--how-to-install-to-obs">OBSへの導入方法 / How to install to OBS</h1>
 <p>OBS メニューの[ツール(T)]→[スクリプト]を選びます。</p>
@@ -383,16 +393,16 @@ code {
 <p><img src="docs/img/020.png" alt="menu,tool,script"></p>
 <p>スクリプトウインドウが表示されます。 スクリプトタブの[+]を押してスクリプトファイルを追加します。</p>
 <p>A script window will appear. Add a script file by pressing [+] on the script tab.</p>
-<p><img src="docs/img/030.png" alt="script,add"></p>
-<p>youtube-live-stream-chat-updater.lua を開きます。</p>
-<p>Open youtube-live-stream-chat-updater.lua</p>
-<p><img src="docs/img/040.png" alt="script,add"></p>
+<p><img src="docs/img/030.png" alt="add script"></p>
+<p>ダウンロードしたzipを展開したフォルダ内にある youtube-live-stream-chat-updater.lua を開きます。</p>
+<p>Open youtube-live-stream-chat-updater.lua in the downloaded zip folder.</p>
+<p><img src="docs/img/040.png" alt="open script"></p>
 <p>導入が完了しました。</p>
 <p>Installation completed.</p>
-<p><img src="docs/img/050.png" alt="script,add"></p>
+<p><img src="docs/img/050.png" alt="installation completed"></p>
 <hr>
 <h1 id="%E8%A8%AD%E5%AE%9A--setting">設定 / Setting</h1>
-<p><img src="docs/img/060.png" alt="script,add"></p>
+<p><img src="docs/img/060.png" alt="setting"></p>
 <p>設定の各項目は、一度入力すると値が保持されます。<br>
 以降はOBSを起動すると自動でURLの更新が行われます。<br>
 ※ボタンを押して手動で更新することもできます。</p>
@@ -415,7 +425,7 @@ Example 2) https://www.youtube.com/@yuki_natsuno_vt/streams</p>
 名前に使用できる文字は半角英数のみです。全角文字（日本語や記号）を含む場合正常に動作しません。</p>
 <p>For Source name, set the name of the browser source that sets the chat comment URL.<br>
 Only alphanumeric characters can be used in the name.</p>
-<p><img src="docs/img/010.png" alt="script,add"></p>
+<p><img src="docs/img/010.png" alt="source name"></p>
 <h2 id="update-livechat-url-button">Update LiveChat URL Button</h2>
 <p>ブラウザソースに設定されているチャットのURLを更新します。</p>
 <p>Update the chat URL set in the browser source.</p>
@@ -425,7 +435,7 @@ Only alphanumeric characters can be used in the name.</p>
 [youtube-live-stream-chat-url-updater.lua] Error: ~~~ が表示されている場合は次の内容を確認してください。</p>
 <p>When you press the [Script Log] button in the script window, the script log window is displayed.<br>
 If &quot;[youtube-live-stream-chat-url-updater.lua] Error: ~~~&quot; is displayed, check the following.
-<img src="docs/img/070.png" alt="script,add"></p>
+<img src="docs/img/070.png" alt="troubleshooting"></p>
 <h2 id="youtube-live-stream-chat-url-updaterlua-error-videoid-was-not-found">[youtube-live-stream-chat-url-updater.lua] Error: videoId was not found.</h2>
 <p>Channel URLに誤りがあるか、指定のURLからコンテンツの情報を取得できない状態になっています。</p>
 <p>There is an error in the Channel URL, or content information cannot be obtained from the specified URL.</p>
