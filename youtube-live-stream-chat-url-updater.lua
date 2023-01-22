@@ -1,7 +1,7 @@
 obs = obslua
 
-g_channel_url = "https://www.youtube.com/@yuki_natsuno_vt"
-g_source_name = "YoutubeChat" -- Alphabet Only. 半角英数のみ対応
+g_channel_url = ""
+g_source_name = "" -- Alphabet Only. 半角英数のみ対応
 
 function get_video_id()
   local handle = io.popen("curl -s "..g_channel_url)
@@ -29,6 +29,16 @@ function confirm_curl()
 end
 
 function update_live_url()
+  if g_channel_url == "" then
+    print("Error: Channel URL is not set.")
+    return
+  end
+  
+  if g_source_name == "" then
+    print("Error: Source name is not set.")
+    return
+  end
+  
   video_id = get_video_id()
   if video_id == nil then
     if confirm_curl() then
@@ -70,7 +80,9 @@ function script_properties()
 end
 
 function load()
-  update_live_url()
+  if g_channel_url ~= "" and g_source_name ~= "" then
+    update_live_url()
+  end
   obs.remove_current_callback()
 end
 
