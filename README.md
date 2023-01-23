@@ -121,6 +121,26 @@ If "[youtube-live-stream-chat-url-updater.lua] Error ~~~" is displayed, check th
 
 Non-alphanumeric characters are used in the path. Please change the location of the script.
 
+## [youtube-live-stream-chat-url-updater.lua] Error: Channel URL is not set.
+
+Channel URL が設定されていません。
+
+Channel URL is not set.
+
+## [youtube-live-stream-chat-url-updater.lua] Error: Source name is unset.
+
+Source name が設定されていません。
+
+Source name is not set.
+
+## [youtube-live-stream-chat-url-updater.lua] Error: Target source is not found. xxxxx
+
+Source name に設定した名前のソースが見つかりません。<br>
+※ソース名に使えるのは半角英数だけです。
+
+The source with the name specified in Source name was not found.<br>
+*Only single-byte alphanumeric characters can be used for the source name.
+
 ## [youtube-live-stream-chat-url-updater.lua] Error: videoId was not found.
 
 Channel URLに誤りがあるか、指定のURLからコンテンツの情報を取得できない状態になっています。<br>
