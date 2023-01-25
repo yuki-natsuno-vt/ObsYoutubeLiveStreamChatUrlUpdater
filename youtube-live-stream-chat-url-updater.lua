@@ -4,7 +4,7 @@ g_channel_url = ""
 g_source_name = "" -- Alphabet Only. 半角英数のみ対応
 
 function get_video_id()
-  local handle = io.popen("curl -s "..g_channel_url)
+  local handle = io.popen("curl -s " .. g_channel_url)
   local stdout = handle:read("*a")
   result = string.match(stdout, "\"videoRenderer\":{\"videoId\":\"[^\"]+\"")
   if result == nil then
@@ -33,12 +33,12 @@ function update_live_url()
     print("Error: Channel URL is not set.")
     return
   end
-  
+
   if g_source_name == "" then
     print("Error: Source name is not set.")
     return
   end
-  
+
   video_id = get_video_id()
   if video_id == nil then
     if confirm_curl() then
@@ -46,16 +46,16 @@ function update_live_url()
     end
     return
   end
-  
+
   source = obs.obs_get_source_by_name(g_source_name)
-  
+
   if source == nil then
-    print("Error: Target source is not found. "..g_source_name)
+    print("Error: Target source is not found. " .. g_source_name)
     return
   end
-  
+
   settings = obs.obs_source_get_settings(source)
-  obs.obs_data_set_string(settings, "url", "https://www.youtube.com/live_chat?v="..video_id)
+  obs.obs_data_set_string(settings, "url", "https://www.youtube.com/live_chat?v=" .. video_id)
   obs.obs_source_update(source, settings)
   obs.obs_source_release(source)
 end
@@ -65,7 +65,6 @@ function button(props, p)
   return false
 end
 
-
 function script_update(settings)
   g_channel_url = obs.obs_data_get_string(settings, "channel_url")
   g_source_name = obs.obs_data_get_string(settings, "source_name")
@@ -74,7 +73,18 @@ end
 function script_properties()
   local props = obs.obs_properties_create()
   obs.obs_properties_add_text(props, "channel_url", "Channel URL", obs.OBS_TEXT_DEFAULT)
-  obs.obs_properties_add_text(props, "source_name", "Source name", obs.OBS_TEXT_DEFAULT)
+
+  local source_prop = obs.obs_properties_add_list(props, "source_name", "Source name", obs.OBS_COMBO_TYPE_EDITABLE, obs.OBS_COMBO_FORMAT_STRING)
+  sources = obs.obs_enum_sources()
+  if sources ~= nil then
+    for _, source in ipairs(sources) do
+      if obs.obs_source_get_id(source) == "browser_source" then
+        name = obs.obs_source_get_name(source)
+        obs.obs_property_list_add_string(source_prop, name, name)
+      end
+    end
+  end
+
   obs.obs_properties_add_button(props, "button", "Update LiveChat URL", button)
   return props
 end
@@ -89,4 +99,3 @@ end
 function script_load(settings)
   obs.timer_add(load, 5000)
 end
-
