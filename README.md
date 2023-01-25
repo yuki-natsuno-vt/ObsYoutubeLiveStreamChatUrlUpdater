@@ -9,6 +9,12 @@ A script that automatically updates the URL of the browser source that displays 
 
 ---
 
+![thumbnail](docs/img/thumbnail.png)
+
+[解説動画 / Commentary video](https://youtu.be/KnytIzi957E)
+
+---
+
 ## 目次 / Content(s)
 * ダウンロード / Download
 * OBSへの導入方法 / How to install to OBS
@@ -164,4 +170,10 @@ It should be installed by default on Windows 10/Mac, but if it doesn't seem to b
 
 MIT License での配布なので利用制限、動作損害保証ともに一切ありません。
 
+宣伝してもらえると嬉しいです！<br>
+Twitter [https://twitter.com/yuki_natsuno_vt/status/1618187661428297728](https://twitter.com/yuki_natsuno_vt/status/1618187661428297728)
+
 Since it is distributed under the MIT License, there are no usage restrictions, operation guarantees, or damage guarantees.
+
+I would be happy if you could promote it!<br>
+Twitter [https://twitter.com/yuki_natsuno_vt/status/1618187661428297728](https://twitter.com/yuki_natsuno_vt/status/1618187661428297728)
