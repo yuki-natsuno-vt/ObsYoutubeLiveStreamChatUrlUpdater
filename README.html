@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="obs-youtube-live-stream-chat-url-updater">OBS Youtube Live Stream Chat URL Updater</h1>
+<p>OBSでYoutube Live配信のチャットコメントを表示するブラウザソースのURLを自動更新するスクリプトです。<br>
+※限定配信など公開範囲に制限があるコンテンツは情報を取得できません。</p>
+<p>A script that automatically updates the URL of the browser source that displays Youtube Live stream chat comments in OBS.<br>
+*Information cannot be obtained for content that has a limited range of disclosure, such as limited distribution.</p>
+<hr>
+<h2 id="%E7%9B%AE%E6%AC%A1--contents">目次 / Content(s)</h2>
+<ul>
+<li>ダウンロード / Download</li>
+<li>OBSへの導入方法 / How to install to OBS</li>
+<li>設定 / Setting</li>
+<li>トラブルシューティング / Troubleshooting</li>
+<li>ライセンス / License</li>
+</ul>
+<hr>
+<h1 id="%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89--download">ダウンロード / Download</h1>
+<p><a href="https://github.com/yuki-natsuno-vt/ObsYoutubeLiveStreamChatUrlUpdater">GitHubの公開ページ</a>の [ Code ] ボタンを押します。<br>
+表示されるメニューから [ Download ZIP ]を選んで ObsYoutubeLiveStreamChatUrlUpdater-main.zip を入手してください。<br>
+ダウンロードしたzipファイルを任意の場所に展開して下さい。<br>
+<em>※パスに半角英数以外の文字が含まれるとOBSでスクリプトをロードする際にエラーになります</em></p>
+<p>Press the [Code] button on the <a href="https://github.com/yuki-natsuno-vt/ObsYoutubeLiveStreamChatUrlUpdater">GitHub public page</a>. <br>
+Select [Download ZIP] from the displayed menu to obtain ObsYoutubeLiveStreamChatUrlUpdater-main.zip. <br>
+Extract the downloaded zip file to any location.<br>
+*<em>Any non-alphanumeric characters in the path will result in an error while loading the script in OBS.</em></p>
+<p><img src="docs/img/000.png" alt="menu,tool,script"></p>
+<hr>
+<h1 id="obs%E3%81%B8%E3%81%AE%E5%B0%8E%E5%85%A5%E6%96%B9%E6%B3%95--how-to-install-to-obs">OBSへの導入方法 / How to install to OBS</h1>
+<p>OBS メニューの[ツール(T)]→[スクリプト]を選びます。</p>
+<p>Select [Tools (T)] → [Scripts] from the OBS menu.</p>
+<p><img src="docs/img/020.png" alt="menu,tool,script"></p>
+<p>スクリプトウインドウが表示されます。 スクリプトタブの[+]を押してスクリプトファイルを追加します。</p>
+<p>A script window will appear. Add a script file by pressing [+] on the script tab.</p>
+<p><img src="docs/img/030.png" alt="add script"></p>
+<p>ダウンロードしたzipを展開したフォルダ内にある youtube-live-stream-chat-updater.lua を開きます。</p>
+<p>Open youtube-live-stream-chat-updater.lua in the downloaded zip folder.</p>
+<p><img src="docs/img/040.png" alt="open script"></p>
+<p>導入が完了しました。</p>
+<p>Installation completed.</p>
+<p><img src="docs/img/050.png" alt="installation completed"></p>
+<hr>
+<h1 id="%E8%A8%AD%E5%AE%9A--setting">設定 / Setting</h1>
+<p><img src="docs/img/060.png" alt="setting"></p>
+<p>設定の各項目は、一度入力すると値が保持されます。<br>
+以降はOBSを起動すると自動でURLの更新が行われます。<br>
+※ボタンを押して手動で更新することもできます。</p>
+<p>Each setting item retains its value once entered.<br>
+After that, when you start OBS, the URL will be updated automatically.<br>
+*You can also update manually by pressing the button.</p>
+<h2 id="channel-url">Channel URL</h2>
+<p>Channel URL にはあなたのチャンネルのトップページURL、またはライブ タブのURLを設定してください。<br>
+トップページURLの場合、チャンネルのカスタマイズによって正常に情報を取得できない場合があります。<br>
+その場合は、ライブ タブのURLを設定してください。<br>
+例1) https://www.youtube.com/@yuki_natsuno_vt<br>
+例2) https://www.youtube.com/@yuki_natsuno_vt/streams</p>
+<p>For Channel URL, set the URL of your channel's top page or the URL of the live stream tab.<br>
+In the case of the top page URL, information may not be obtained properly due to channel customization.<br>
+In that case, please set the URL of the live stream tab.<br>
+Example 1) https://www.youtube.com/@yuki_natsuno_vt<br>
+Example 2) https://www.youtube.com/@yuki_natsuno_vt/streams</p>
+<h2 id="source-name">Source name</h2>
+<p>Source name には、チャットコメントのURLを設定する、ブラウザソースの名前を設定してください。<br>
+名前に使用できる文字は半角英数のみです。全角文字（日本語や記号）を含む場合正常に動作しません。</p>
+<p>For Source name, set the name of the browser source that sets the chat comment URL.<br>
+Only alphanumeric characters can be used in the name.</p>
+<p><img src="docs/img/010.png" alt="source name"></p>
+<h2 id="update-livechat-url-button">Update LiveChat URL Button</h2>
+<p>ブラウザソースに設定されているチャットのURLを更新します。</p>
+<p>Update the chat URL set in the browser source.</p>
+<hr>
+<h1 id="%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0--troubleshooting">トラブルシューティング / Troubleshooting</h1>
+<p>スクリプトウインドウの[スクリプトログ]ボタンを押すと、スクリプトログウインドウが表示されます。<br>
+[youtube-live-stream-chat-url-updater.lua] Error ~~~ が表示されている場合は次の内容を確認してください。</p>
+<p>When you press the [Script Log] button in the script window, the script log window is displayed.<br>
+If &quot;[youtube-live-stream-chat-url-updater.lua] Error ~~~&quot; is displayed, check the following.</p>
+<p><img src="docs/img/070.png" alt="troubleshooting"></p>
+<h2 id="youtube-live-stream-chat-url-updaterlua-error-loading-file-cannot-open">[youtube-live-stream-chat-url-updater.lua] Error loading file: cannot open</h2>
+<p>パスに半角英数以外の文字が使われている可能性があります。スクリプトを配置する場所を変更してください。</p>
+<p>Non-alphanumeric characters are used in the path. Please change the location of the script.</p>
+<h2 id="youtube-live-stream-chat-url-updaterlua-error-channel-url-is-not-set">[youtube-live-stream-chat-url-updater.lua] Error: Channel URL is not set.</h2>
+<p>Channel URL が設定されていません。</p>
+<p>Channel URL is not set.</p>
+<h2 id="youtube-live-stream-chat-url-updaterlua-error-source-name-is-unset">[youtube-live-stream-chat-url-updater.lua] Error: Source name is unset.</h2>
+<p>Source name が設定されていません。</p>
+<p>Source name is not set.</p>
+<h2 id="youtube-live-stream-chat-url-updaterlua-error-target-source-is-not-found-xxxxx">[youtube-live-stream-chat-url-updater.lua] Error: Target source is not found. xxxxx</h2>
+<p>Source name に設定した名前のソースが見つかりません。<br>
+※ソース名に使えるのは半角英数だけです。</p>
+<p>The source with the name specified in Source name was not found.<br>
+*Only single-byte alphanumeric characters can be used for the source name.</p>
+<h2 id="youtube-live-stream-chat-url-updaterlua-error-videoid-was-not-found">[youtube-live-stream-chat-url-updater.lua] Error: videoId was not found.</h2>
+<p>Channel URLに誤りがあるか、指定のURLからコンテンツの情報を取得できない状態になっています。<br>
+限定配信など公開範囲に制限があるコンテンツは情報を取得できません。</p>
+<p>There is an error in the Channel URL, or content information cannot be obtained from the specified URL.<br>
+Information cannot be obtained for content that has a limited range of disclosure, such as limited distribution.</p>
+<h2 id="youtube-live-stream-chat-url-updaterlua-error-curl-command-is-not-found">[youtube-live-stream-chat-url-updater.lua] Error: curl command is not found.</h2>
+<p>URLからページ情報を取得する curl コマンドが見つかりませんでした。<br>
+Windows10/Macには標準でインストールされているはずですが、インストールされていないようであれば新たにインストールしてください。</p>
+<p>I couldn't find a curl command to get page information from a URL. <br>
+It should be installed by default on Windows 10/Mac, but if it doesn't seem to be installed, please install it again.</p>
+<hr>
+<h1 id="%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9--license">ライセンス / License</h1>
+<h2 id="%E8%A6%81%E7%B4%84--summary">要約 / Summary</h2>
+<p>MIT License での配布なので利用制限、動作損害保証ともに一切ありません。</p>
+<p>Since it is distributed under the MIT License, there are no usage restrictions, operation guarantees, or damage guarantees.</p>
+
+</body>
+</html>
